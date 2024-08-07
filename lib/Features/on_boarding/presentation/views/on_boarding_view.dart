@@ -3,6 +3,8 @@ import 'package:twseel_app/Features/on_boarding/presentation/data/models/onBoard
 import 'package:twseel_app/Features/on_boarding/presentation/views/widget/pageView_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/widget/custom_button.dart';
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -28,7 +30,15 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
             SizedBox(
               height: 40.h,
-            )
+            ),
+            CustomButton(
+              text: 'التالي',
+              onPressed: () {},
+              width: 235.w,
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
           ],
         ),
       ),
