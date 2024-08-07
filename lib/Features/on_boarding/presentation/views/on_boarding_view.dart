@@ -19,73 +19,79 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: PageView.builder(
-                itemBuilder: (context, index) {
-                  return PageViewItem(
-                    onboardingModel: onBoarding[index],
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: PageView.builder(
+                  itemBuilder: (context, index) {
+                    return PageViewItem(
+                      onboardingModel: onBoarding[index],
+                    );
+                  },
+                  itemCount: 2,
+                  physics: const BouncingScrollPhysics(),
+                  controller: pageController,
+                  onPageChanged: (index) {
+                    if (index == onBoarding.length - 1) {
+                      setState(() {
+                        isLast = true;
+                      });
+                    }
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              CustomButton(
+                text: 'التالي',
+                onPressed: () {
+                  if (isLast) {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const LoginView()));
+                  }
+                  pageController.nextPage(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeIn,
                   );
                 },
-                itemCount: 2,
-                physics: const BouncingScrollPhysics(),
-                controller: pageController,
-                onPageChanged: (index) {
-                  if (index == onBoarding.length - 1) {
-                    setState(() {
-                      isLast = true;
-                    });
-                  }
-                },
+                width: 235.w,
               ),
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-            CustomButton(
-              text: 'التالي',
-              onPressed: () {
-                if (isLast) {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => const LoginView()));
-                }
-                pageController.nextPage(
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeIn,
-                );
-              },
-              width: 235.w,
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Container(
-              width: 175.w,
-              height: 8,
-              decoration: BoxDecoration(
-                color: isLast ? MyColors.orange : Colors.grey[200],
-                borderRadius: BorderRadius.circular(30),
+              SizedBox(
+                height: 40.h,
               ),
-              child: Row(
-                children: [
-                  Container(
-                    width: 90.w,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      color: MyColors.orange,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  )
-                ],
+              Container(
+                width: 175.w,
+                height: 8,
+                decoration: BoxDecoration(
+                  color: isLast ? MyColors.orange : Colors.grey[200],
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 90.w,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: MyColors.orange,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-          ],
+              SizedBox(
+                height: 40.h,
+              ),
+            ],
+          ),
         ),
       ),
     );
