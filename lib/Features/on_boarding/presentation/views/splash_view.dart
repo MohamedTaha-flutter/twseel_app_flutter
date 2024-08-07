@@ -15,6 +15,7 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     navigationToOnBoardingView(context);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +32,11 @@ class _SplashViewState extends State<SplashView> {
       ),
     );
   }
+
   void navigationToOnBoardingView(context) {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => const OnBoardingView()));
     });
   }
-
 }
