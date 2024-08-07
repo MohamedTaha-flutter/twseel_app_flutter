@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:twseel_app/Features/on_boarding/presentation/data/models/onBoarding_model.dart';
 import 'package:twseel_app/core/style/font_style.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../data/models/onBoarding_model.dart';
 
 
 
