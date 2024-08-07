@@ -6,7 +6,13 @@ class OnBoardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Text("OnBoardingView")),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Image(image: AssetImage("assets/images/onboarding_1.png"))
+          ],
+        ),
+      ),
     );
   }
 }

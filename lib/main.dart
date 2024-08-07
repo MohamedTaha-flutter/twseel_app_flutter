@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:twseel_app/Features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:twseel_app/Features/on_boarding/presentation/views/splash_view.dart';
 
 void main() {
@@ -24,6 +24,24 @@ class MyApp extends StatelessWidget {
           },
           debugShowCheckedModeBanner: false,
           home: const SplashView(),
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
+            useMaterial3: false,
+            fontFamily: 'Cairo',
+            appBarTheme: AppBarTheme(
+              centerTitle: true,
+              titleTextStyle: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Cairo',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20.sp),
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  statusBarColor: Colors.transparent),
+              color: Colors.white,
+              elevation: 0,
+            ),
+          ),
+
         );
       },
     );
