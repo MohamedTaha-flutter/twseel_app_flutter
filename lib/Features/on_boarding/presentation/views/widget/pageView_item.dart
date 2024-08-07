@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:twseel_app/Features/on_boarding/presentation/data/models/onBoarding_model.dart';
 import 'package:twseel_app/core/style/font_style.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key});
+  const PageViewItem({super.key, required this.onboardingModel});
+  final OnboardingModel onboardingModel ;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,10 +18,10 @@ class PageViewItem extends StatelessWidget {
             Container(
               width: double.infinity,
               height: MediaQuery.sizeOf(context).height / 1.7,
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage("assets/images/onboarding_1.png"),
+                    image: AssetImage(onboardingModel.imagePath),
                   )),
             ),
             Padding(
@@ -34,20 +36,20 @@ class PageViewItem extends StatelessWidget {
           ],
         ),
         Text(
-          "خصص طلباتك بسرعة وسلاسة",
+          onboardingModel.label,
           style: FontStyles.font24Weight600Black.copyWith(fontSize: 18.sp),
         ),
         Opacity(
           opacity: 0.8,
           child: Text(
-            ".اختر المنتجات و خصص الطلبات حسب متطلباتك",
+            onboardingModel.firstText,
             style: FontStyles.font12Weight400Black,
           ),
         ),
         Opacity(
           opacity: 0.8,
           child: Text(
-            "..احصل على اشعارات فوريه بحالة طلباتك",
+            onboardingModel.secondText,
             style: FontStyles.font12Weight400Black,
           ),
         ),

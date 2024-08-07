@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:twseel_app/Features/on_boarding/presentation/data/models/onBoarding_model.dart';
 import 'package:twseel_app/Features/on_boarding/presentation/views/widget/pageView_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/widget/custom_button.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -22,7 +21,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             Expanded(
               child: PageView.builder(
                 itemBuilder: (context, index) {
-                  return const PageViewItem();
+                  return PageViewItem(
+                    onboardingModel: onBoarding[index],
+                  );
                 },
                 itemCount: 2,
                 physics: const BouncingScrollPhysics(),
