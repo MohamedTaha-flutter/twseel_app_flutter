@@ -8,9 +8,7 @@ class OnBoardingView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [
-            Image(image: AssetImage("assets/images/onboarding_1.png"))
-          ],
+          children: [],
         ),
       ),
     );
