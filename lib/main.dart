@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twseel_app/Features/auth/presentation/manage/cubit/logic.dart';
 import 'package:twseel_app/Features/on_boarding/presentation/views/splash_view.dart';
 
 void main() {
@@ -16,31 +18,36 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true, // تعديل النصوص بشكل ديناميكي
       splitScreenMode: true, // دعم الشاشات المقسمة
       builder: (context, widget) {
-        return MaterialApp(
-          builder: (context, widget) {
-            return Directionality(
-                textDirection: TextDirection.rtl, child: widget!);
-          },
-          debugShowCheckedModeBanner: false,
-          home: const SplashView(),
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            useMaterial3: false,
-            fontFamily: 'Cairo',
-            appBarTheme: AppBarTheme(
-              centerTitle: true,
-              titleTextStyle: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Cairo',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20.sp),
-              systemOverlayStyle: const SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent),
-              color: Colors.white,
-              elevation: 0,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => LoginCubit())
+          ],
+          child: MaterialApp(
+            builder: (context, widget) {
+              return Directionality(
+                  textDirection: TextDirection.rtl, child: widget!);
+            },
+            debugShowCheckedModeBanner: false,
+            home: const SplashView(),
+            theme: ThemeData(
+              scaffoldBackgroundColor: Colors.white,
+              useMaterial3: false,
+              fontFamily: 'Cairo',
+              appBarTheme: AppBarTheme(
+                centerTitle: true,
+                titleTextStyle: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Cairo',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20.sp),
+                systemOverlayStyle: const SystemUiOverlayStyle(
+                    statusBarColor: Colors.transparent),
+                color: Colors.white,
+                elevation: 0,
+              ),
             ),
-          ),
 
+          ),
         );
       },
     );
