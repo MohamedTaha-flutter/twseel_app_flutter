@@ -101,7 +101,7 @@ class LoginView extends StatelessWidget {
                       blackText: 'ليس لديك حساب ؟ ',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const SignUpView()));
+                            builder: (context) =>  SignUpView()));
                       },
                       orangeText: " سججل الدخول هنا  ",
                     ),
