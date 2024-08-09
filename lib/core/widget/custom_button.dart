@@ -6,7 +6,7 @@ import 'package:twseel_app/core/style/font_style.dart';
 class CustomButton extends StatelessWidget {
   final String text;
 
-  final VoidCallback onPressed;
+  final Function() onPressed;
 
   double? width;
 
