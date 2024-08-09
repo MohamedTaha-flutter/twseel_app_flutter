@@ -52,7 +52,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 onPressed: () {
                   if (isLast) {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const LoginView()));
+                        builder: (context) =>  LoginView()));
                   }
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 400),
