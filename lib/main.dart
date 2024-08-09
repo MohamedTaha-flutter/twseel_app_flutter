@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           builder: (context, widget) {
             return Directionality(
-                textDirection: TextDirection.ltr, child: widget!);
+                textDirection: TextDirection.rtl, child: widget!);
           },
           debugShowCheckedModeBanner: false,
           home: const SplashView(),

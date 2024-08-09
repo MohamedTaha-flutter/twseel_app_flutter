@@ -22,6 +22,12 @@ class IfYouHaveAnAccount extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(
+            blackText,
+            style: FontStyles.font12Weight400Black.copyWith(
+              fontSize: 16
+            ),
+          ),
           TextButton(
             onPressed: onPressed,
             child:Text(
@@ -29,10 +35,6 @@ class IfYouHaveAnAccount extends StatelessWidget {
               style: FontStyles.font16Weight400LightBlack
                   .copyWith(color: MyColors.orange, fontSize: 14.sp),
             ),
-          ),
-          Text(
-            blackText,
-            style: FontStyles.font12Weight400Black,
           ),
 
         ],
