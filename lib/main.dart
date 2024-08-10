@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twseel_app/Features/auth/presentation/manage/cubit/logic.dart';
-import 'package:twseel_app/Features/on_boarding/presentation/views/splash_view.dart';
-
+import 'package:twseel_app/Features/layout/presentation/Views/layout_view.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
                   textDirection: TextDirection.rtl, child: widget!);
             },
             debugShowCheckedModeBanner: false,
-            home: const SplashView(),
+            home: const LayoutView(),
             theme: ThemeData(
               scaffoldBackgroundColor: Colors.white,
               useMaterial3: false,
