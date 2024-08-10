@@ -57,6 +57,7 @@ class TextFormFieldWidget extends StatelessWidget {
                 onChanged: onChanged,
                 decoration: InputDecoration(
                   suffixIcon: suffixIcon,
+                  errorStyle:  FontStyles.font12Weight400Black.copyWith(color: Colors.red),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
                   enabledBorder: OutlineInputBorder(
