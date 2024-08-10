@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twseel_app/Features/auth/presentation/views/write_code_to%20conferm_password_view.dart';
 import 'package:twseel_app/core/style/app_color.dart';
 import 'package:twseel_app/core/style/font_style.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,6 +43,7 @@ class ForgetPasswordView extends StatelessWidget {
             CustomButton(
               text: "تسجيبل الدخول ",
               onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => WriteCodeToConfirmPassword()));
               },
             ),
             Center(
