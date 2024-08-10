@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:twseel_app/Features/auth/presentation/manage/cubit/logic.dart';
 import 'package:twseel_app/Features/auth/presentation/manage/cubit/state.dart';
+import 'package:twseel_app/Features/auth/presentation/views/forget_password_view.dart';
 import 'package:twseel_app/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:twseel_app/Features/auth/presentation/views/widget/if_you_have_an_account.dart';
 import 'package:twseel_app/Features/auth/presentation/views/widget/login_by_F_G.dart';
@@ -26,7 +27,7 @@ class LoginView extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit =LoginCubit.get(context) ;
+        var cubit = LoginCubit.get(context);
         return Scaffold(
           body: Padding(
             padding: EdgeInsets.only(right: 17.w, left: 17.w, top: 100.h),
@@ -71,9 +72,8 @@ class LoginView extends StatelessWidget {
                       isPassword: cubit.visiblePassword,
                       keyboardType: TextInputType.visiblePassword,
                       suffixIcon: IconButton(
-                          onPressed: ()
-                          {
-                            cubit.changeVisiblePassword() ;
+                          onPressed: () {
+                            cubit.changeVisiblePassword();
                           },
                           icon: const Icon(Icons.remove_red_eye_outlined)),
                     ),
@@ -81,7 +81,13 @@ class LoginView extends StatelessWidget {
                       height: 1.h,
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ForgetPasswordView(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "هل نسيت كلمة السر ؟ ",
                           style: FontStyles.font16Weight400LightBlack.copyWith(
@@ -101,7 +107,7 @@ class LoginView extends StatelessWidget {
                       blackText: 'ليس لديك حساب ؟ ',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) =>  SignUpView()));
+                            builder: (context) => SignUpView()));
                       },
                       orangeText: " سججل الدخول هنا  ",
                     ),
