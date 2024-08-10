@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:twseel_app/Features/auth/presentation/views/widget/add_new_password_view.dart';
 
 import '../../../../core/style/app_color.dart';
 import '../../../../core/style/font_style.dart';
@@ -53,6 +54,7 @@ class WriteCodeToConfirmPasswordView extends StatelessWidget {
             CustomButton(
                 text: "تأكيد",
                 onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddNewPasswordView() )) ;
                 }),
             SizedBox(
               height: 25.h,
