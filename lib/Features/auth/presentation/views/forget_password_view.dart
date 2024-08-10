@@ -43,7 +43,7 @@ class ForgetPasswordView extends StatelessWidget {
             CustomButton(
               text: "تسجيبل الدخول ",
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => WriteCodeToConfirmPassword()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => WriteCodeToConfirmPasswordView()));
               },
             ),
             Center(
