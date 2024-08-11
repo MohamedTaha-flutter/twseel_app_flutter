@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twseel_app/Features/auth/presentation/manage/cubit/logic.dart';
+import 'package:twseel_app/Features/layout/presentation/Cubit/cubit.dart';
 import 'package:twseel_app/Features/layout/presentation/Views/layout_view.dart';
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       builder: (context, widget) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider(create: (context) => LoginCubit())
+            BlocProvider(create: (context) => LoginCubit()),
+            BlocProvider(create: (context) => LayoutCubit()),
           ],
           child: MaterialApp(
             builder: (context, widget) {
