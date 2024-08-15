@@ -53,7 +53,7 @@ class HomeView extends StatelessWidget {
               ),
               const ChoseMonthListViewWidget(),
               SizedBox(
-                height: 10.h,
+                height: 9.h,
               ),
               const GridViewHomeWidget()
             ],
