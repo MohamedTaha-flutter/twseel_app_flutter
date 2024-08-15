@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twseel_app/core/style/app_color.dart';
 import '../../../../core/style/font_style.dart';
 import '../widget/chose_month_widget.dart';
+import '../widget/chosee_month_list_view_widget.dart';
 import '../widget/location_widget.dart';
 import '../widget/order_widget.dart';
 import '../widget/personal_widget.dart';
@@ -45,10 +46,9 @@ class HomeView extends StatelessWidget {
             style: FontStyles.font12Weight400Black
                 .copyWith(color: MyColors.grey80, fontSize: 13.sp),
           ),
-          const ChoseMonthWidget()
+          const ChoseMonthListViewWidget()
         ],
       ),
     ));
   }
 }
-
