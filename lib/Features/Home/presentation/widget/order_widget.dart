@@ -14,6 +14,13 @@ class CreateOrderWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: MyColors.orange,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            offset:  const Offset(0 , 1 ),
+            blurRadius: 1 ,
+            color: Colors.black.withOpacity(0.25),
+          ),
+        ]
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

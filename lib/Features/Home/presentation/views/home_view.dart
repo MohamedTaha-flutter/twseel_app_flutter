@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twseel_app/core/style/app_color.dart';
 import '../../../../core/style/font_style.dart';
+import '../widget/chose_month_widget.dart';
 import '../widget/location_widget.dart';
 import '../widget/order_widget.dart';
 import '../widget/personal_widget.dart';
@@ -16,6 +17,7 @@ class HomeView extends StatelessWidget {
         body: Padding(
       padding: EdgeInsets.only(right: 17.w, left: 17.w, top: 80.h),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const PersonalWidget(),
           SizedBox(
@@ -33,7 +35,17 @@ class HomeView extends StatelessWidget {
           SizedBox(
             height: 25.h,
           ),
-
+          Text(
+            "شهر سبتمبر ",
+            style: FontStyles.font12Weight400Black
+                .copyWith(color: MyColors.orange, fontSize: 13.sp),
+          ),
+          Text(
+            "الطلبات المقدمة في الفترة ما بين 1 مايو و31 مايو",
+            style: FontStyles.font12Weight400Black
+                .copyWith(color: MyColors.grey80, fontSize: 13.sp),
+          ),
+          const ChoseMonthWidget()
         ],
       ),
     ));
